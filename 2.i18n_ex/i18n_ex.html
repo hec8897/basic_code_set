@@ -1,0 +1,134 @@
+<html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<head>
+    <style>
+     li{
+         font-weight: bold;
+     }
+
+            
+        </style>
+
+
+</head>
+
+<body>
+
+    <div class="translation">
+        <a href="javascript:void(0);" onclick="changeLang('en-US');">영어</a>
+        <a href="javascript:void(0);" onclick="changeLang('ko-KR');">한국어</a>
+        <a href="javascript:void(0);" onclick="changeLang('ja-JP');">일본어</a>
+
+        <ul>
+            <li data-i18n="A:apple" class="test"></li>
+            <li data-i18n="A:banana"></li>
+            <li data-i18n="A:orange"></li>
+        </ul>
+
+        <ul>
+            <li data-i18n="B:car"></li>
+            <li data-i18n="B:airplane"></li>
+            <li data-i18n="B:bicycle"></li>
+        </ul>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/1.9.0/i18next.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $.i18n.init({
+            //lng: 'en-US',
+            lng: 'ko-KR',
+            debug: true,
+            useLocalStorage: false,
+            localStorageExpirationTime: 86400000, // in ms, default 1 week
+            ns: {
+                namespaces: ['A', 'B', 'C'],
+                defaultNs: 'A'
+            },
+            //resGetPath: 'js/locales/translation.json'
+            resStore: {
+                "en-US": {
+                    "A": {
+                        "apple": "Apple",
+                        "banana": "Banana",
+                        "orange": "Orange"
+                    },
+                    "B": {
+                        "car": "Car",
+                        "airplane": "Airplane",
+                        "bicycle": "Bicycle"
+                    }
+                },
+                "ko-KR": {
+                    "A": {
+                        "apple": "사과",
+                        "banana": "바나나",
+                        "orange": "오렌지"
+                    },
+                    "B": {
+                        "car": "자동차",
+                        "airplane": "비행기",
+                        "bicycle": "자전거"
+                    }
+                },
+                "ja-JP": {
+                    "A": {
+                        "apple": "JP",
+                        "banana": "JPP",
+                        "orange": "PPP"
+                    },
+                    "B": {
+                        "car": "JJJ",
+                        "airplane": "JJP",
+                        "bicycle": "JJJ"
+                    }
+                }
+            }
+        }, function () {
+            $('.translation').i18n();
+        });
+
+
+        console.log(this.i18n.options.lng);     
+        var setLang = this.i18n.options.lng;
+        if(setLang == "ko-KR"){
+                $("html").css({"color":"powderblue"})
+            }
+
+              else if(setLang == "en-US"){
+                $("html").css({"color":"tomato"})
+            }
+            else if(setLang == "ja-JP"){
+                $("html").css({"color":"violet"})
+
+            }
+   
+
+        var changeLang = function (lang) {
+            $.i18n.setLng(lang);
+            $('.translation').i18n();
+            console.log(this.i18n.options.lng);
+            var setLang = this.i18n.options.lng;
+            if(setLang == "ko-KR"){
+                $("html").css({"color":"powderblue"})
+            }
+            else if(setLang == "en-US"){
+                console.log("영어")
+                $("html").css({"color":"tomato"})
+            }
+            else if(setLang == "ja-JP"){
+                console.log("일본어")
+                $("html").css({"color":"violet"})
+
+            }
+        }
+       
+        
+    
+
+    </script>
+</body>
+
+</html>
