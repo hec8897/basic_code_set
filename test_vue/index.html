@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <section class="app1">
+
+            <div id="app1">
+
+                <h2>{{tit}}</h2>
+
+                <div class="graph_area">
+                    <div class="graphs">
+                        <h2>graph</h2>
+                        <div class="graph">
+                            <div class="val1_graph">
+                                <div class="graph_line">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="graph_tit">val1_name</br><span>{{Val1percent}}</span></div>
+                            </div>
+                            <div class="val2_graph">
+                                <div class="graph_line">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="graph_tit">val2_name</br><span>{{Val2percent}}</span></div>
+                            </div>
+                            <div class="val3_graph">
+                                <div class="graph_line">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="graph_tit">val3_name</br><span>{{Val3percent}}</span></div>
+                            </div>
+                            <div class="val4_graph">
+                                <div class="graph_line">
+                                    <div class="line"></div>
+                                </div>
+                                <div class="graph_tit">val4_name</br><span>{{Val4percent}}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputs">
+
+                        <h2>input Value(max:<input type="text" v-model="maxNum"> )
+                            </br>(pressEnter)
+                        </h2>
+
+                        <p><label for="val1">val1</label>
+                            <input type="text" id="val1" v-model="val1" v-on:keyup.enter="graph_ui.val1Fn()"></p>
+
+
+                        <p><label for="val2">val2</label>
+                            <input type="text" id="val2" v-model="val2" v-on:keyup.enter="graph_ui.val2Fn()"></p>
+
+                        <p><label for="val3">val3</label>
+                            <input type="text" id="val3" v-model="val3" v-on:keyup.enter="graph_ui.val3Fn()"></p>
+
+                        <p><label for="val4">val4</label>
+                            <input type="text" id="val4" v-model="val4" v-on:keyup.enter="graph_ui.val4Fn()"></p>
+
+                        <p class="all"> val1: <span>{{val1}}</span> </br>
+                            val2: <span>{{val2}}</span> </br>
+                            val3: <span>{{val3}}</span> </br>
+                            val4: <span>{{val4}}</span> </br></p>
+
+
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
+        </section>
+    </div>
+
+    <script src="vue.js"></script>
+
+</body>
+
+</html>
