@@ -14,8 +14,12 @@
  * less watch compiler 설정 json 파일
  * less npm 설치후 less-watch-compiler npm 설치 
  * 노드 명령어 (less-watch-compiler less css)
+ 
+### 4.ajax
+ * ajax json parser
+ * javascript / jquery
 
-### 4.Vue.js graph_ui
+### 5.Vue.js graph_ui
  * vue.js 연습 
  * 그래프 ui
  * vue.js + jquery
