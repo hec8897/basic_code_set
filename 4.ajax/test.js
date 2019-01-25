@@ -8,6 +8,7 @@ xmlhttp.onreadystatechange = function () {
     if (xmlhttp.readyState == XMLHttpRequest.DONE) {
         console.log(xmlhttp.status);
         if (xmlhttp.status === 200) {
+
             //xmlhttp.status = 200 일때 동작//
 
             /*==========================
@@ -23,14 +24,15 @@ xmlhttp.onreadystatechange = function () {
             404: "Page not found"
             For a complete list go to the Http Messages Reference
 
-            requset state == 4 & 200 일때 ajax 응답이 준비된 상태
+            ※requset state == 4 & 200 일때 ajax 응답이 준비된 상태
             ============================*/
 
-            arr = xmlhttp.responseText;
+            var arr = xmlhttp.responseText;
             //http 통신으로 가져온 text 파일 가져옴            
-            var jsonobj = JSON.parse(arr);
+                var jsonobj = JSON.parse(arr);
             //가져온 파일 json obj로 파싱          
-            document.querySelector(".vnbtn").addEventListener("click", function () {
+                var SelectBtn = document.querySelector(".vnbtn");
+                SelectBtn.addEventListener("click", function () {                
                 console.log(jsonobj.test)
                 var outside = document.querySelector(".vnjs");
                 outside.innerHTML += "<p>" + jsonobj.test + "</p>";
