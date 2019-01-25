@@ -18,6 +18,7 @@
 ### 4.ajax
  * ajax json parser
  * javascript / jquery
+ * pure javascript
 
 ### 5.Vue.js graph_ui
  * vue.js 연습 
